@@ -3,8 +3,11 @@ import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 
+  //Custom Section
+  import HeadlineBody from '~/components/ilyas/HeadlineBody'
+
 export const meta = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{title: 'EjenSarafEmas.com'}];
 };
 
 export async function loader({context}) {
@@ -20,6 +23,7 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
+      <HeadlineBody />
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
