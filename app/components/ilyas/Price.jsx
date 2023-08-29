@@ -1,8 +1,14 @@
+import { Link } from '@remix-run/react';
 import { Image } from '@shopify/hydrogen';
 
-const Price = ({ bgColor }) => {
+const Price = ({ bgColor, anchorText }) => {
+
+    const Link1Botol = 'https://sarafemas.myshopify.com/cart/44803245539635:1?channel=buy_button'
+    const Link3Botol = 'https://sarafemas.myshopify.com/cart/43697737269555:1?channel=buy_button'
+    const Link5Botol = 'https://sarafemas.myshopify.com/cart/43697737302323:1?channel=buy_button'
+
     return <div>
-        <section className={`${bgColor}`}>
+        <section className={`${bgColor}`} id={anchorText}>
             <div className="2xl:max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12 px-4 py-12 mx-auto">
                 <div className="2xl:max-w-7xl flex flex-wrap items-center mx-auto">
                     <div className="lg:w-2/5 lg:pr-24 flex flex-col items-start md:mb-16 text-left">
@@ -17,8 +23,118 @@ const Price = ({ bgColor }) => {
                         </p>
                     </div>
                     <div className="lg:w-3/5 xl:mt-0 w-full mt-12">
-                        <div className='grid sm:grid-cols-1 md:grid-cols-3 gap-9'>
+                        <div className="hover:bg-green-100 mb-10">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:justify-center md:justify-between">
+                                <div>
+                                    <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        1 Botol
+                                    </h3>
+                                    <h3 className="text-gray-700 md:text-2xl lg:text-2xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        RM120
+                                    </h3>
+                                    <h3 className="text-green-500 md:text-xl lg:text-xl font-bold leading-none tracking-tighter">
+                                        Guna 1 Bulan
+                                    </h3>
+                                </div>
+                                <Image
+                                    src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/Product_1.png?v=1680492094"
+                                    alt="saraf emas yang mujarab merawat pelbagai penyakit"
+                                    width={85}
+                                    height={'auto'}
+                                    className='mx-auto'
+                                />
+                                <div>
+                                    <ul className='ml-5 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
+                                        <li>RM120 Untuk 1 Botol</li>
+                                        <li className='text-xs'>Pos Percuma (Ninjavan)</li>
+                                        <li>COD by Ninjavan</li>
+                                        <li className='text-xs'>COD fee <span className="italic">+rm10 (Ninjavan)</span></li>
+                                    </ul>
+                                </div>
+                                <div className='mt-8 md:mt-0'>
+                                    <Link to={Link1Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                        Beli 1 Botol
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="bg-green-50 p-2 hover:bg-green-100 mb-10 pb-8 lg:pb-0">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:justify-center md:justify-between">
+                                <div>
+                                    <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        3 Botol
+                                    </h3>
+                                    <h3 className="text-gray-700 md:text-2xl lg:text-2xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        RM300
+                                    </h3>
+                                    <h3 className="text-green-500 md:text-xl lg:text-xl font-bold leading-none tracking-tighter">
+                                        Guna 3 Bulan
+                                    </h3>
+                                </div>
+                                <Image
+                                    src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/Harga_3.png?v=1691775491"
+                                    alt="saraf emas yang mujarab merawat pelbagai penyakit"
+                                    width={200}
+                                    height={'auto'}
+                                    className='mx-auto'
+                                />
+                                <div>
+                                    <ul className='ml-5 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
+                                        <li>RM300 Untuk 3 Botol</li>
+                                        <li className='text-xs'>Pos Percuma (Ninjavan)</li>
+                                        <li>COD by Ninjavan</li>
+                                        <li>COD Percuma</li>
+                                    </ul>
+                                </div>
+                                <div className='mt-8 md:mt-0'>
+                                    <Link to={Link3Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-9 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                        Beli 3 Botol
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hover:bg-green-100 mb-10">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:justify-center md:justify-between">
+                                <div>
+                                    <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        5 Botol
+                                    </h3>
+                                    <h3 className="text-gray-700 md:text-2xl lg:text-2xl text-3xl font-extrabold leading-none tracking-tighter">
+                                        RM475
+                                    </h3>
+                                    <h3 className="text-green-500 md:text-xl lg:text-xl font-bold leading-none tracking-tighter">
+                                        Guna 5 Bulan
+                                    </h3>
+                                </div>
+                                <Image
+                                    src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/Harga_5.png?v=1680492779"
+                                    alt="saraf emas yang mujarab merawat pelbagai penyakit"
+                                    width={200}
+                                    height={'auto'}
+                                    className='mx-auto'
+                                />
+                                <div>
+                                    <ul className='ml-5 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
+                                        <li>RM475 Untuk 5 Botol</li>
+                                        <li className='text-xs'>Pos Percuma (Ninjavan)</li>
+                                        <li>COD by Ninjavan</li>
+                                        <li>COD Percuma</li>
+                                    </ul>
+                                </div>
+                                <div className='mt-8 md:mt-0'>
+                                    <Link to={Link5Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                        Beli 5 Botol
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
 
+
+
+
+
+                        {/* old pricing design */}
+                        {/* <div className='grid sm:grid-cols-1 md:grid-cols-3 gap-9 justify-evenly'>
                             <div className="relative items-center w-full text-center p-4">
                                 <h2 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
                                     1 Botol
@@ -36,7 +152,7 @@ const Price = ({ bgColor }) => {
                                     height={'auto'}
                                     className='mx-auto'
                                 />
-                                <ul className='mb-8 text-base leading-relaxed text-left text-gray-600 list-decimal'>
+                                <ul className='mb-8 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
                                     <li>Harga: RM120 Untuk 1 Botol</li>
                                     <li>Pos Percuma (Ninjavan)</li>
                                     <li>COD by Ninjavan</li>
@@ -46,8 +162,6 @@ const Price = ({ bgColor }) => {
                                     <button className="hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                         Beli 1 Botol
                                     </button>
-
-
                                 </div>
                             </div>
                             <div className="relative items-center w-full text-center bg-green-100 p-10">
@@ -66,7 +180,7 @@ const Price = ({ bgColor }) => {
                                     width={500}
                                     height={'auto'} className='mx-auto'
                                 />
-                                <ul className='mb-8 text-base leading-relaxed text-left text-gray-600 list-decimal'>
+                                <ul className='mb-8 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
                                     <li>Harga: RM300 Untuk 3 Botol</li>
                                     <li>Pos Percuma (Ninjavan)</li>
                                     <li>COD by Ninjavan</li>
@@ -96,7 +210,7 @@ const Price = ({ bgColor }) => {
                                     height={'auto'}
                                     className='mx-auto'
                                 />
-                                <ul className='mb-8 text-base leading-relaxed text-left text-gray-600 list-decimal'>
+                                <ul className='mb-8 text-sm leading-relaxed text-left text-gray-600 list-decimal'>
                                     <li>Harga: RM475 Untuk 5 Botol</li>
                                     <li>Pos Percuma (Ninjavan)</li>
                                     <li>COD by Ninjavan</li>
@@ -109,7 +223,7 @@ const Price = ({ bgColor }) => {
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

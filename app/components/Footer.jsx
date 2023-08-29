@@ -1,14 +1,14 @@
-import {useMatches, NavLink} from '@remix-run/react';
+import { useMatches, NavLink } from '@remix-run/react';
 
-export function Footer({menu}) {
+export function Footer({ menu }) {
   return (
-    <footer className="footer">
+    <footer className="footer text-xs">
       <FooterMenu menu={menu} />
     </footer>
   );
 }
 
-function FooterMenu({menu}) {
+function FooterMenu({ menu }) {
   const [root] = useMatches();
   const publicStoreDomain = root?.data?.publicStoreDomain;
   return (
@@ -18,7 +18,7 @@ function FooterMenu({menu}) {
         // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain)
+            item.url.includes(publicStoreDomain)
             ? new URL(item.url).pathname
             : item.url;
         const isExternal = !url.startsWith('/');
@@ -84,7 +84,7 @@ const FALLBACK_FOOTER_MENU = {
   ],
 };
 
-function activeLinkStyle({isActive, isPending}) {
+function activeLinkStyle({ isActive, isPending }) {
   return {
     fontWeight: isActive ? 'bold' : '',
     color: isPending ? 'grey' : 'white',

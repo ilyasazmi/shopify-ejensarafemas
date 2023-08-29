@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import { Image } from '@shopify/hydrogen';
 
 const SectionMemperkenalkan = ({ bgColor }) => {
@@ -19,9 +20,9 @@ const SectionMemperkenalkan = ({ bgColor }) => {
               </p>
               <div className="lg:mt-6 max-w-7xl sm:flex mt-0">
                 <div className="hidden md:flex mt-3">
-                  <button className="hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                  <Link to="#harga" className="hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                     Lihat Harga
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

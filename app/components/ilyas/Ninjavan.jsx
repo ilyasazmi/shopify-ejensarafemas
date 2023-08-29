@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import { Image } from '@shopify/hydrogen';
 
 const Ninjavan = ({ bgColor }) => {
@@ -13,28 +14,26 @@ const Ninjavan = ({ bgColor }) => {
                             <h2 className="text-gray-900 md:text-5xl lg:text-7xl mb-8 text-3xl font-extrabold leading-none tracking-tighter">
                                 Penghantaran Pantas Ninjavan
                             </h2>
-                            <p className="mb-8 text-base leading-relaxed text-left text-gray-600">
-                                <ul className='ml-5 list-disc'>
-                                    <li className='hover:font-semibold'>
-                                        <span className='font-bold'>Kami Postage Pukul 3 Setiap Hari.</span>
-                                        <p>Ya, setiap hari kami pos untuk pastikan parcel anda cepat sampai.</p>
-                                    </li>
-                                    <li className='hover:font-semibold'>
-                                        <span className='font-bold'>Parcel Sampai 3 Hari.</span>
-                                        <p>Kami hantar dengan pantas. Ramai pelanggan suka dengan kami</p>
-                                    </li>
-                                    <li className='hover:font-semibold'>
-                                        <span className='font-bold'>C.O.D Semenanjung Malaysia.</span>
-                                        <p>Bayaran secara barang sampai baru anda bayar tersedia. Lebih selamat untuk anda yang baru pertama kali nak beli.</p>
-                                        <p className='italic text-sm pt-2'>Sabah, Sarawak, Labuan coming soon</p>
-                                    </li>
-                                </ul>
-                            </p>
+                            <ul className='ml-5 list-disc mb-8 text-base leading-relaxed text-left text-gray-600'>
+                                <li className='hover:font-semibold'>
+                                    <span className='font-bold'>Kami Postage Pukul 3 Setiap Hari.</span>
+                                    <p>Ya, setiap hari kami pos untuk pastikan parcel anda cepat sampai.</p>
+                                </li>
+                                <li className='hover:font-semibold'>
+                                    <span className='font-bold'>Parcel Sampai 3 Hari.</span>
+                                    <p>Kami hantar dengan pantas. Ramai pelanggan suka dengan kami</p>
+                                </li>
+                                <li className='hover:font-semibold'>
+                                    <span className='font-bold'>C.O.D Semenanjung Malaysia.</span>
+                                    <p>Bayaran secara barang sampai baru anda bayar tersedia. Lebih selamat untuk anda yang baru pertama kali nak beli.</p>
+                                    <p className='italic text-sm pt-2'>Sabah, Sarawak, Labuan coming soon</p>
+                                </li>
+                            </ul>
                             <div className="lg:mt-6 max-w-7xl sm:flex mt-0">
                                 <div className="hidden md:flex mt-3">
-                                    <button className="hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                    <Link to="#harga" className="hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                         Lihat Harga
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

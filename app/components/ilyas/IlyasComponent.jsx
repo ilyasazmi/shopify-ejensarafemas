@@ -15,32 +15,31 @@ import TakBolehMakan from './TakBolehMakan';
 import Gerenti from './Gerenti';
 import Ninjavan from './Ninjavan';
 import Whatsapp from './Whatsapp';
-// import StyledBody from './StyledBody';
+import FooterMobile from './FooterMobile';
 
 const IlyasComponent = () => {
-  const linkHarga = 'https://sarafemas.net/67359998259/checkouts/8ad8d7792bf169ddeb1e02314a4661a0?channel=buy_button';
+
   return (
     <>
       <Headline bgColor="bg-green-100" />
       <SectionDerita bgColor="bg-green-50" />
-      <CeritaSaya bgColor="bg-white" />
-      <VideoTestimoni bgColor="bg-green-50" btnLihatHarga={linkHarga} />
+      <CeritaSaya bgColor="bg-white" anchorText="ceritasaya" />
+      <VideoTestimoni bgColor="bg-green-50" anchorText="testimoni" />
       <Testimoni bgColor="bg-white" />
+      <SectionDerita bgColor="bg-green-100" />
       <SectionMemperkenalkan bgColor="bg-green-50" />
       <SectionBody bgColor="bg-white" />
-      <Fungsi bgColor="bg-white" />
+      <Fungsi bgColor="bg-white" anchorText="khasiat" />
       <Khasiat bgColor="bg-green-50" />
-      <Awas bgColor="bg-gray-100" />
+      <Awas bgColor="bg-gray-100" anchorText="original" />
       <Sah bgColor="bg-white" />
       <TakBolehMakan bgColor="bg-green-50" />
-      <Gerenti bgColor="bg-white" />
+      <Gerenti bgColor="bg-white" anchorText="jaminan" />
       <Ninjavan bgColor="bg-red-50" />
-      <Faq bgColor="bg-green-50" />
-      <Price bgColor="bg-white" />
-      <Whatsapp bgColor="bg-green-50" />
-
-      {/* reserve component */}
-      {/* <StyledBody bgColor="bg-green-50" /> */}
+      <Faq bgColor="bg-gray-100" />
+      <Price bgColor="bg-white" anchorText="harga" />
+      <Whatsapp bgColor="bg-green-50" anchorText="whatsapp" />
+      <FooterMobile />
     </>
   );
 };

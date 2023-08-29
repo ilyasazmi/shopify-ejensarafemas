@@ -1,8 +1,8 @@
-import {Await, NavLink, useMatches} from '@remix-run/react';
-import {Suspense} from 'react';
+import { Await, NavLink, useMatches, Link } from '@remix-run/react';
+// import { Suspense } from 'react';
 
-export function Header({header, isLoggedIn, cart}) {
-  const {shop, menu} = header;
+export function Header({ header, isLoggedIn, cart }) {
+  const { shop, menu } = header;
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
@@ -14,7 +14,7 @@ export function Header({header, isLoggedIn, cart}) {
   );
 }
 
-export function HeaderMenu({menu, viewport}) {
+export function HeaderMenu({ menu, viewport }) {
   const [root] = useMatches();
   const publicStoreDomain = root?.data?.publicStoreDomain;
   const className = `header-menu-${viewport}`;
@@ -25,6 +25,7 @@ export function HeaderMenu({menu, viewport}) {
       window.location.href = event.currentTarget.href;
     }
   }
+
 
   return (
     <nav className={className} role="navigation">
@@ -39,13 +40,13 @@ export function HeaderMenu({menu, viewport}) {
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {(FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain)
+            item.url.includes(publicStoreDomain)
             ? new URL(item.url).pathname
             : item.url;
         return (
@@ -66,91 +67,101 @@ export function HeaderMenu({menu, viewport}) {
   );
 }
 
-function HeaderCtas({isLoggedIn, cart}) {
+function HeaderCtas({ isLoggedIn, cart }) {
   return (
     <nav className="header-ctas" role="navigation">
-      <HeaderMenuMobileToggle />
+      {/* <HeaderMenuMobileToggle /> */}
       <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        {isLoggedIn ? 'Account' : 'Sign in'}
       </NavLink>
-      <SearchToggle />
-      <CartToggle cart={cart} />
+      <Link to="#harga" className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-5 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">Lihat Harga</Link>
+      {/* <SearchToggle /> */}
+      {/* <CartToggle cart={cart} /> */}
     </nav>
   );
 }
 
-function HeaderMenuMobileToggle() {
-  return (
-    <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
-    </a>
-  );
-}
+// function HeaderMenuMobileToggle() {
+//   return (
+//     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
+//       <h3>☰</h3>
+//     </a>
+//   );
+// }
 
-function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
-}
+// function SearchToggle() {
+//   return <a href="#search-aside">Search</a>;
+// }
 
-function CartBadge({count}) {
-  return <a href="#cart-aside">Cart {count}</a>;
-}
+// function CartBadge({ count }) {
+//   return <a href="#cart-aside">Cart {count}</a>;
+// }
 
-function CartToggle({cart}) {
-  return (
-    <Suspense fallback={<CartBadge count={0} />}>
-      <Await resolve={cart}>
-        {(cart) => {
-          if (!cart) return <CartBadge count={0} />;
-          return <CartBadge count={cart.totalQuantity || 0} />;
-        }}
-      </Await>
-    </Suspense>
-  );
-}
+// function CartToggle({ cart }) {
+//   return (
+//     <Suspense fallback={<CartBadge count={0} />}>
+//       <Await resolve={cart}>
+//         {(cart) => {
+//           if (!cart) return <CartBadge count={0} />;
+//           return <CartBadge count={cart.totalQuantity || 0} />;
+//         }}
+//       </Await>
+//     </Suspense>
+//   );
+// }
 
 const FALLBACK_HEADER_MENU = {
   id: 'gid://shopify/Menu/199655587896',
   items: [
     {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
       id: 'gid://shopify/MenuItem/461609533496',
       resourceId: null,
       tags: [],
-      title: 'Blog',
+      title: 'Testimoni',
       type: 'HTTP',
-      url: '/blogs/journal',
+      url: '#testimoni',
+      items: [],
+    },
+    {
+      id: 'gid://shopify/MenuItem/461609500728',
+      resourceId: null,
+      tags: [],
+      title: 'Khasiat & Fungsi',
+      type: 'HTTP',
+      url: '#khasiat',
       items: [],
     },
     {
       id: 'gid://shopify/MenuItem/461609566264',
       resourceId: null,
       tags: [],
-      title: 'Policies',
+      title: 'Original',
       type: 'HTTP',
-      url: '/policies',
+      url: '#original',
       items: [],
     },
     {
       id: 'gid://shopify/MenuItem/461609599032',
       resourceId: 'gid://shopify/Page/92591030328',
       tags: [],
-      title: 'About',
+      title: 'Jaminan',
       type: 'PAGE',
-      url: '/pages/about',
+      url: '#jaminan  ',
+      items: [],
+    },
+    {
+      id: 'gid://shopify/MenuItem/4616095990362',
+      resourceId: 'gid://shopify/Page/92591030328',
+      tags: [],
+      title: 'Whatsapp',
+      type: 'PAGE',
+      url: '#whatsapp',
       items: [],
     },
   ],
 };
 
-function activeLinkStyle({isActive, isPending}) {
+
+function activeLinkStyle({ isActive, isPending }) {
   return {
     fontWeight: isActive ? 'bold' : '',
     color: isPending ? 'grey' : 'black',
