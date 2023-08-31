@@ -18,13 +18,29 @@ const Price = ({ bgColor, anchorText }) => {
                         <h2 className="text-gray-900 md:text-5xl lg:text-7xl mb-8 text-3xl font-extrabold leading-none tracking-tighter">
                             Beli Banyak, Jimat Banyak
                         </h2>
-                        <p className="mb-8 text-base leading-relaxed text-left text-gray-600">
+                        {/* <p className="mb-8 text-base leading-relaxed text-left text-gray-600">
                             Belian secara COD (barang sampai baru bayar) tersedia. Delivery by Ninjavan.
-                        </p>
+                        </p> */}
+                        <div className="hidden md:block">
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/qr-code--4--300.webp?v=1692628873"
+                                alt="whatsapp saraf emas"
+                                width="150"
+                            />
+                            <p className="text-sm italic">Scan QR code untuk beli secara whatsapp.</p>
+                            <p className="text-sm font-bold">011-6979 9840</p>
+                        </div>
+                        <ul className="mt-8 text-sm leading-relaxed text-left text-gray-600">
+                            <li className="font-bold">Pilihan Bayaran</li>
+                            <li>Belian secara COD (barang sampai baru bayar) tersedia</li>
+                            <li>Delivery by Ninjavan.</li>
+                            <li>Online Banking / Kad Kredit</li>
+                            <li>3 hari sampai</li>
+                        </ul>
                     </div>
                     <div className="lg:w-3/5 xl:mt-0 w-full mt-12">
                         <div className="hover:bg-green-100 mb-10">
-                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:justify-center md:justify-between">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 sm:justify-center md:justify-between">
                                 <div>
                                     <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
                                         1 Botol
@@ -51,15 +67,15 @@ const Price = ({ bgColor, anchorText }) => {
                                         <li className='text-xs'>COD fee <span className="italic">+rm10 (Ninjavan)</span></li>
                                     </ul>
                                 </div>
-                                <div className='mt-8 md:mt-0'>
-                                    <Link to={Link1Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                <div className='mt-4 mb-2 md:mt-0 col-span-1'>
+                                    <Link to={Link1Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                         Beli 1 Botol
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="bg-green-50 p-2 hover:bg-green-100 mb-10 pb-8 lg:pb-0">
-                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:justify-center md:justify-between">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 gap-2 sm:justify-center md:justify-between">
                                 <div>
                                     <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
                                         3 Botol
@@ -86,15 +102,15 @@ const Price = ({ bgColor, anchorText }) => {
                                         <li>COD Percuma</li>
                                     </ul>
                                 </div>
-                                <div className='mt-8 md:mt-0'>
-                                    <Link to={Link3Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-9 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                <div className='mt-4 mb-2 md:mt-0 col-span-1'>
+                                    <Link to={Link3Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-9 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                         Beli 3 Botol
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="hover:bg-green-100 mb-10">
-                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:justify-center md:justify-between">
+                            <div className="relative w-full items-center text-center lg:text-left p-4 grid sm:grid-cols-1 md:grid-cols-3 gap-2 sm:justify-center md:justify-between">
                                 <div>
                                     <h3 className="text-gray-900 md:text-2xl lg:text-4xl text-3xl font-extrabold leading-none tracking-tighter">
                                         5 Botol
@@ -121,8 +137,8 @@ const Price = ({ bgColor, anchorText }) => {
                                         <li>COD Percuma</li>
                                     </ul>
                                 </div>
-                                <div className='mt-8 md:mt-0'>
-                                    <Link to={Link5Botol} className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
+                                <div className='mt-4 mb-2 md:mt-0 col-span-1'>
+                                    <Link to={Link5Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                         Beli 5 Botol
                                     </Link>
                                 </div>
