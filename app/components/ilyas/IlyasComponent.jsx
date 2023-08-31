@@ -19,6 +19,7 @@ import FooterMobile from './FooterMobile';
 
 const IlyasComponent = () => {
 
+
   return (
     <>
       <Headline bgColor="bg-green-100" />

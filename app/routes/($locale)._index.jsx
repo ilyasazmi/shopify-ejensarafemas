@@ -3,23 +3,38 @@
 // import {Await, useLoaderData, Link} from '@remix-run/react';
 // import {Suspense} from 'react';
 // import {Image, Money} from '@shopify/hydrogen';
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
 
 //Custom Section
 import IlyasComponent from '~/components/ilyas/IlyasComponent';
 
 export const meta = () => {
-  return [{title: 'EjenSarafEmas.com'}];
+  return [{ title: 'Saraf Emas Ubat Mujarab Sakit Saraf, Sakit sendi, Gout, Tangan kebas-kebas' }];
 };
 
 export default function Homepage() {
+
+
   // const data = useLoaderData();
+
+  const tagManagerArgs = {
+    gtmId: "GTM-PV7ZSTS",
+    dataLayerName: 'Page View'
+  }
+
+  useEffect(() => {
+    TagManager.initialize(tagManagerArgs)
+
+  }, [])
+
   return (
-    <div className="home">
+    <div className="home" >
       <IlyasComponent />
 
       {/* <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} /> */}
-    </div>
+    </div >
   );
 }
 // export async function loader({context}) {
