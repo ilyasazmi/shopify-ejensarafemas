@@ -1,10 +1,11 @@
 // import {defer} from '@shopify/remix-oxygen';
 // import {redirect} from '@shopify/remix-oxygen';
 // import {Await, useLoaderData, Link} from '@remix-run/react';
+import { useLocation } from '@remix-run/react'; //code for shopify analytics
+import { useRef } from 'react'; //code for shopify analytics
+import { useEffect } from 'react';
 // import {Suspense} from 'react';
 // import {Image, Money} from '@shopify/hydrogen';
-import { useEffect } from 'react';
-import TagManager from 'react-gtm-module';
 
 //Custom Section
 import IlyasComponent from '~/components/ilyas/IlyasComponent';
@@ -15,18 +16,20 @@ export const meta = () => {
 
 export default function Homepage() {
 
+  const location = useLocation();
+  const lastLocationKey = useRef('');
+
+  useEffect(() => {
+    // Filter out useEffect running twice
+    if (lastLocationKey.current === location.key) return;
+
+    lastLocationKey.current = location.key;
+
+    // This hook is where you can send a page view event to Shopify and other third-party analytics
+  }, [location]);
 
   // const data = useLoaderData();
 
-  const tagManagerArgs = {
-    gtmId: "GTM-PV7ZSTS",
-    dataLayerName: 'Page View'
-  }
-
-  useEffect(() => {
-    TagManager.initialize(tagManagerArgs)
-
-  }, [])
 
   return (
     <div className="home" >
