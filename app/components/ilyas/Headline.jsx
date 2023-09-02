@@ -16,8 +16,8 @@ const Headline = ({ bgColor }) => {
                 Saraf Emas Melegakan Derita
               </h1>
               <ul className='list-disc ml-5 leading-relaxed text-left text-gray-600 text-base'>
-                <li>Sakit Pada Saraf</li>
                 <li>Sakit sendi</li>
+                <li>Sakit Pada Saraf</li>
                 <li>Sakit pinggang</li>
                 <li>Angin Ahmar / Stroke</li>
                 <li>Saraf Tersepit / slip disc</li>
