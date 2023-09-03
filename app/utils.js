@@ -1,8 +1,11 @@
-import {useLocation} from '@remix-run/react';
-import {useMemo} from 'react';
+import { useLocation } from '@remix-run/react';
+import { useMatches } from '@remix-run/react'
+import { useMemo } from 'react';
+
+// import { DEFAULT_LOCALE } from '~/lib/utils';
 
 export function useVariantUrl(handle, selectedOptions) {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   return useMemo(() => {
     return getVariantUrl({
@@ -12,6 +15,39 @@ export function useVariantUrl(handle, selectedOptions) {
       selectedOptions,
     });
   }, [handle, selectedOptions, pathname]);
+
+}
+
+//shopify analytics
+export function usePageAnalytics(arg) {
+
+  const { hasUserConsent = true } = arg || {};
+  const matches = useMatches();
+
+  const analyticsFromMatches = useMemo(() => {
+    const data = {};
+
+    matches.forEach((event) => {
+      const eventData = event?.data;
+      if (eventData) {
+        eventData['analytics'] && Object.assign(data, eventData['analytics']);
+
+        // const selectedLocale = eventData['selectedLocale'] || DEFAULT_LOCALE;
+        // Object.assign(data, {
+        //   currency: selectedLocale.currency,
+        //   acceptedLanguage: selectedLocale.language,
+        // });
+      }
+    });
+
+    return {
+      ...data,
+      hasUserConsent,
+
+    };
+  }, [matches]);
+
+  return analyticsFromMatches;
 }
 
 export function getVariantUrl({

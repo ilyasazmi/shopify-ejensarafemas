@@ -1,4 +1,4 @@
-import {defer} from '@shopify/remix-oxygen';
+import { defer } from '@shopify/remix-oxygen';
 import {
   Links,
   Meta,
@@ -13,14 +13,26 @@ import {
 import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
-import {Layout} from '~/components/Layout';
+import { Layout } from '~/components/Layout';
 import tailwindCss from './styles/tailwind.css';
+
+//shopify analytics
+import { useLocation } from '@remix-run/react'; //code for shopify analytics
+import { useRef, useEffect } from 'react'; //code for shopify analytics
+import {
+  AnalyticsEventName,
+  getClientBrowserParameters,
+  sendShopifyAnalytics,
+  useShopifyCookies,
+} from '@shopify/hydrogen';
+import { usePageAnalytics } from './utils';
+import { AnalyticsPageType } from '@shopify/hydrogen';
 
 export function links() {
   return [
-    {rel: 'stylesheet', href: tailwindCss},
-    {rel: 'stylesheet', href: resetStyles},
-    {rel: 'stylesheet', href: appStyles},
+    { rel: 'stylesheet', href: tailwindCss },
+    { rel: 'stylesheet', href: resetStyles },
+    { rel: 'stylesheet', href: appStyles },
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
@@ -29,17 +41,17 @@ export function links() {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    { rel: 'icon', type: 'image/svg+xml', href: favicon },
   ];
 }
 
-export async function loader({context}) {
-  const {storefront, session, cart} = context;
+export async function loader({ context }) {
+  const { storefront, session, cart } = context;
   const customerAccessToken = await session.get('customerAccessToken');
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
 
   // validate the customer access token is valid
-  const {isLoggedIn, headers} = await validateCustomerAccessToken(
+  const { isLoggedIn, headers } = await validateCustomerAccessToken(
     customerAccessToken,
     session,
   );
@@ -71,12 +83,44 @@ export async function loader({context}) {
       isLoggedIn,
       publicStoreDomain,
     },
-    {headers},
+    { headers },
+    {
+      analytics: {
+        pageType: AnalyticsPageType.product,
+      }
+    }
   );
 }
 
 export default function App() {
   const data = useLoaderData();
+
+
+  const hasUserConsent = true;
+  useShopifyCookies({ hasUserConsent });
+  const location = useLocation();
+  const lastLocationKey = useRef('');
+  const pageAnalytics = usePageAnalytics({ hasUserConsent });
+
+  useEffect(() => {
+    // Filter out useEffect running twice
+    if (lastLocationKey.current === location.key) return;
+
+    lastLocationKey.current = location.key;
+
+    // Send page view analytics
+
+    const payload = {
+      ...getClientBrowserParameters(),
+      ...pageAnalytics,
+    };
+
+    sendShopifyAnalytics({
+      eventName: AnalyticsEventName.PAGE_VIEW,
+      payload,
+    });
+
+  }, [location, pageAnalytics]);
 
   return (
     <html lang="en">
@@ -96,6 +140,7 @@ export default function App() {
     </html>
   );
 }
+
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -154,7 +199,7 @@ async function validateCustomerAccessToken(customerAccessToken, session) {
   let isLoggedIn = false;
   const headers = new Headers();
   if (!customerAccessToken?.accessToken || !customerAccessToken?.expiresAt) {
-    return {isLoggedIn, headers};
+    return { isLoggedIn, headers };
   }
   const expiresAt = new Date(customerAccessToken.expiresAt);
   const dateNow = new Date();
@@ -166,7 +211,7 @@ async function validateCustomerAccessToken(customerAccessToken, session) {
     isLoggedIn = true;
   }
 
-  return {isLoggedIn, headers};
+  return { isLoggedIn, headers };
 }
 
 const MENU_FRAGMENT = `#graphql

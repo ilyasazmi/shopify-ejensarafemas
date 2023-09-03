@@ -41,8 +41,18 @@ const IlyasComponent = () => {
       <Price bgColor="bg-white" anchorText="harga" />
       <Whatsapp bgColor="bg-green-50" anchorText="whatsapp" />
       <FooterMobile />
+
     </>
   );
 };
 
 export default IlyasComponent;
+
+export async function loader() {
+  return defer({
+    product,
+    analytics: {
+      pageType: 'page',
+    }
+  });
+}
