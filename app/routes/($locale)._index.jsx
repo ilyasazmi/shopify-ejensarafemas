@@ -1,6 +1,6 @@
 import { defer } from '@shopify/remix-oxygen';
 // import {redirect} from '@shopify/remix-oxygen';
-// import {Await, useLoaderData, Link} from '@remix-run/react';
+import { Await, useLoaderData, Link } from '@remix-run/react';
 
 // import {Suspense} from 'react';
 // import {Image, Money} from '@shopify/hydrogen';
@@ -10,13 +10,6 @@ import { AnalyticsPageType } from '@shopify/hydrogen';
 //Custom Section
 import IlyasComponent from '~/components/ilyas/IlyasComponent';
 
-export async function loader() {
-  return defer({
-    analytics: {
-      pageType: AnalyticsPageType.product
-    },
-  });
-}
 
 export const meta = () => {
   return [{ title: 'Saraf Emas Ubat Mujarab Sakit Saraf, Sakit sendi, Gout, Tangan kebas-kebas' }];
@@ -24,8 +17,7 @@ export const meta = () => {
 
 export default function Homepage() {
 
-  // const data = useLoaderData();
-
+  const data = useLoaderData();
 
   return (
     <div className="home" >
@@ -36,6 +28,19 @@ export default function Homepage() {
     </div >
   );
 }
+
+
+export async function loader({ context }) {
+
+  const { storefront } = context;
+  return defer({
+    analytics: {
+      pageType: AnalyticsPageType.page
+
+    },
+  });
+}
+
 // export async function loader({context}) {
 //   const {storefront} = context;
 //   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);

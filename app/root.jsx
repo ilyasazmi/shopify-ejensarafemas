@@ -95,9 +95,9 @@ export async function loader({ context }) {
 export default function App() {
   const data = useLoaderData();
 
-
   const hasUserConsent = true;
   useShopifyCookies({ hasUserConsent });
+
   const location = useLocation();
   const lastLocationKey = useRef('');
   const pageAnalytics = usePageAnalytics({ hasUserConsent });
@@ -117,7 +117,7 @@ export default function App() {
 
     sendShopifyAnalytics({
       eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
+      payload: AnalyticsEventName.PAGE_VIEW,
     });
 
   }, [location, pageAnalytics]);
