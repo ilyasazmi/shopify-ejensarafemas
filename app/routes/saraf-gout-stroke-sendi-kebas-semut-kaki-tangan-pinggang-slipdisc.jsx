@@ -17,8 +17,12 @@ import Ninjavan from '../components/ilyas/Ninjavan';
 import Whatsapp from '../components/ilyas/Whatsapp';
 import FooterMobile from '../components/ilyas/FooterMobile';
 
-export default function Landingpage() {
+//SHOPIFY ANALYTICS
+import { AnalyticsPageType } from '@shopify/hydrogen';
+import { useLoaderData } from '@remix-run/react';
 
+export default function Landingpage() {
+    const data = useLoaderData()
 
     return (
         <>
@@ -44,3 +48,13 @@ export default function Landingpage() {
         </>
     );
 };
+
+export async function loader() {
+    return defer({
+        product,
+        analytics: {
+            pageType: AnalyticsPageType.page,
+            products: [product],
+        },
+    });
+}

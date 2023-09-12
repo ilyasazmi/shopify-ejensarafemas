@@ -17,7 +17,7 @@ import { Layout } from '~/components/Layout';
 import tailwindCss from './styles/tailwind.css';
 
 //shopify analytics
-import { useLocation } from '@remix-run/react'; //code for shopify analytics
+import { useLocation } from 'react-router-dom'; //code for shopify analytics
 import { useRef, useEffect } from 'react'; //code for shopify analytics
 import {
   AnalyticsEventName,
@@ -100,15 +100,15 @@ export default function App() {
   const { hasUserConsent } = true;
   useShopifyCookies({ hasUserConsent });
 
-  const location = useLocation();
-  const lastLocationKey = useRef('');
+  let location = useLocation();
+  let lastLocationKey = useRef('');
   const pageAnalytics = usePageAnalytics({ hasUserConsent });
 
   useEffect(() => {
     // Filter out useEffect running twice
     if (lastLocationKey.current === location.key) return;
 
-    //lastLocationKey.current = location.key;
+    lastLocationKey.current = location.key;
 
     // Send page view analytics
 
@@ -118,7 +118,7 @@ export default function App() {
     };
 
     sendShopifyAnalytics({
-      eventName: 'PAGE_VIEW',
+      eventName: AnalyticsEventName.PAGE_VIEW,
       payload: payload,
     });
 

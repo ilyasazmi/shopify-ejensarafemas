@@ -1,6 +1,6 @@
 import { defer } from '@shopify/remix-oxygen';
 // import {redirect} from '@shopify/remix-oxygen';
-import { Await, useLoaderData, Link } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 
 // import {Suspense} from 'react';
 // import {Image, Money} from '@shopify/hydrogen';
@@ -35,7 +35,7 @@ export async function loader({ context }) {
   const { storefront } = context;
   return defer({
     analytics: {
-      pageType: AnalyticsPageType.page
+      pageType: AnalyticsPageType.page,
 
     },
   });
