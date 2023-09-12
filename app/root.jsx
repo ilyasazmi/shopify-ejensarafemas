@@ -95,7 +95,9 @@ export async function loader({ context }) {
 export default function App() {
   const data = useLoaderData();
 
-  const hasUserConsent = true;
+  // console.log(data)
+
+  const { hasUserConsent } = true;
   useShopifyCookies({ hasUserConsent });
 
   const location = useLocation();
@@ -106,7 +108,7 @@ export default function App() {
     // Filter out useEffect running twice
     if (lastLocationKey.current === location.key) return;
 
-    lastLocationKey.current = location.key;
+    //lastLocationKey.current = location.key;
 
     // Send page view analytics
 
@@ -116,8 +118,8 @@ export default function App() {
     };
 
     sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload: AnalyticsEventName.PAGE_VIEW,
+      eventName: 'PAGE_VIEW',
+      payload: payload,
     });
 
   }, [location, pageAnalytics]);
