@@ -20,6 +20,7 @@ import FooterMobile from '../components/ilyas/FooterMobile';
 //SHOPIFY ANALYTICS
 import { AnalyticsPageType } from '@shopify/hydrogen';
 import { useLoaderData } from '@remix-run/react';
+import { defer } from '@shopify/remix-oxygen';
 
 export default function Landingpage() {
     const data = useLoaderData()
@@ -51,10 +52,8 @@ export default function Landingpage() {
 
 export async function loader() {
     return defer({
-        product,
         analytics: {
             pageType: AnalyticsPageType.page,
-            products: [product],
         },
     });
 }
