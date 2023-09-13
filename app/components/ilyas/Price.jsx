@@ -37,6 +37,10 @@ const Price = ({ bgColor, anchorText }) => {
                             <li>Online Banking / Kad Kredit</li>
                             <li>3 hari sampai</li>
                         </ul>
+                        <div className="grid grid-cols-2 items-center">
+                            <img src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/billplz.png?v=1694606482" width={150} height={85} />
+                            <img src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/stripe.png?v=1694606481" width={150} height={85} />
+                        </div>
                     </div>
                     <div className="lg:w-3/5 xl:mt-0 w-full mt-12">
                         <div className="hover:bg-green-100 mb-10">
