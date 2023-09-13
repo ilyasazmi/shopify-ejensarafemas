@@ -7,7 +7,7 @@ const FooterMobile = () => {
                 <div className="grid grid-cols-1 gap-6 text-xs text-center p-2">
                     <Link className="text-white" to="https://api.whatsapp.com/send?phone=601169799840&text=%21ShareInfoSarafEmas">Whatsapp</Link>
                     <Link className="text-white" to="#harga">Harga</Link>
-                    <Link className="text-white" to="#fungsi">Fungsi</Link>
+                    <Link className="text-white" to="#khasiat">Fungsi</Link>
                     <Link className="text-white" to="#testimoni">Testimoni</Link>
                 </div>
             </div>
