@@ -41,6 +41,12 @@ const Price = ({ bgColor, anchorText }) => {
                             <img src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/billplz.png?v=1694606482" width={150} height={85} />
                             <img src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/stripe.png?v=1694606481" width={150} height={85} />
                         </div>
+
+                        <div className="bg-indigo-50 mb-10 mt-4">
+                            <img className='pl-4 pt-4 ' src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/PayLater-By-Grab_Horizontal_Original-RGB-01.png?v=1697621948" width={150} height={85} />
+                            <p className='text-base uppercase font-bold p-4 pt-0'>Buy Now, Pay Later</p>
+                            <p className='text-sm pr-4 pl-4 pb-4'>Jika anda ingin membeli secara ansuran, anda boleh pilih PayLater By Grab sebagai pilihan pembayaran. Sila tanya kami untuk maklumat lanjut.</p>
+                        </div>
                     </div>
                     <div className="lg:w-3/5 xl:mt-0 w-full mt-12">
                         <div className="hover:bg-green-100 mb-10">
@@ -148,6 +154,7 @@ const Price = ({ bgColor, anchorText }) => {
                                 </div>
                             </div>
                         </div>
+
 
 
 
