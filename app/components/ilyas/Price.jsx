@@ -79,7 +79,8 @@ const Price = ({ bgColor, anchorText }) => {
                                 </div>
                                 <div className='mt-4 mb-2 md:mt-0 col-span-1'>
                                     <Link to={Link1Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
-                                        Beli 1 Botol
+                                        <span className='inline md:hidden'>Klik Sini Untuk Beli 1 Botol</span>
+                                        <span className='hidden md:inline'>Beli 1 Botol</span>
                                     </Link>
                                 </div>
                             </div>
@@ -114,7 +115,8 @@ const Price = ({ bgColor, anchorText }) => {
                                 </div>
                                 <div className='mt-4 mb-2 md:mt-0 col-span-1'>
                                     <Link to={Link3Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-9 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
-                                        Beli 3 Botol
+                                        <span className='inline md:hidden'>Klik Sini Untuk Beli 3 Botol</span>
+                                        <span className='hidden md:inline'>Beli 3 Botol</span>
                                     </Link>
                                 </div>
                             </div>
@@ -149,7 +151,8 @@ const Price = ({ bgColor, anchorText }) => {
                                 </div>
                                 <div className='mt-4 mb-2 md:mt-0 col-span-1'>
                                     <Link to={Link5Botol} className=" w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
-                                        Beli 5 Botol
+                                        <span className='inline md:hidden'>Klik Sini Untuk Beli 5 Botol</span>
+                                        <span className='hidden md:inline'>Beli 5 Botol</span>
                                     </Link>
                                 </div>
                             </div>

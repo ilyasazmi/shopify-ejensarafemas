@@ -16,11 +16,11 @@ const Whatsapp = ({ bgColor, anchorText }) => {
                         <p className="inline md:hidden mb-8 text-base leading-relaxed text-left text-gray-600">
                             Klik butang dibawah untuk terus chat dengan kami di Whatsapp
                         </p>
-                        <div className="inline md:hidden mt-1">
+                        {/* <div className="inline md:hidden mt-1">
                             <Link to="https://api.whatsapp.com/send?phone=601169799840&text=%21ShareInfoSarafEmas" className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
                                 011-6979 9840
                             </Link>
-                        </div>
+                        </div> */}
                         <p className="hidden md:inline mb-8 text-base leading-relaxed text-left text-gray-600">
                             Imbas Kod QR whatsapp untuk terus chat dengan kami di Whatsapp
                         </p>
@@ -83,7 +83,7 @@ const Whatsapp = ({ bgColor, anchorText }) => {
                                 </div>
                                 <div className="block md:hidden mt-3">
                                     <Link to="https://api.whatsapp.com/send?phone=601169799840&text=%21ShareInfoSarafEmas" className="w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-500">
-                                        011-6979 9840
+                                        whatsapp 011-6979 9840
                                     </Link>
                                 </div>
                             </div>
