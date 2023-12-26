@@ -12,14 +12,14 @@ const Gerenti = ({ bgColor, anchorText }) => {
                                 biar kami tanggung jika anda tak puas hati
                             </h3>
                             <h2 className="text-gray-900 md:text-5xl lg:text-7xl mb-8 text-3xl font-extrabold leading-none tracking-tighter">
-                                Jaminan Wang Kembali
+                                Jaminan Wang Kembali 100%
                             </h2>
                             <p className="mb-8 text-base leading-relaxed text-left text-gray-600">
                                 Jika anda tidak berpuas hati dengan hasil yang diberikan, kami akan pulangkan wang anda 100% tanpa sebarang tanya. <br /><br />
                                 95% penguna SARAF EMAS puas hati & repeat sales. Namun jika anda beli & tiada perubahan dalam 7 hari.
                                 Wang anda kami kembalikan. <br /><br />
 
-                                <span className="font-bold">Risiko anda hanya 0%. Kami jamin 100% wang anda.</span>
+                                <span className="font-bold">Risiko anda hanya 0%. Kami jamin 100% wang anda kembali.</span>
                             </p>
                             <div className="lg:mt-6 max-w-7xl sm:flex mt-0">
                                 <div className="hidden md:flex mt-3">
