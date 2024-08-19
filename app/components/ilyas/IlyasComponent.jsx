@@ -32,7 +32,7 @@ const IlyasComponent = () => {
       <SectionBody bgColor="bg-white" />
       <Fungsi bgColor="bg-white" anchorText="khasiat" />
       <Khasiat bgColor="bg-green-50" />
-      <Awas bgColor="bg-gray-100" anchorText="original" />
+      {/* <Awas bgColor="bg-gray-100" anchorText="original" /> */}
       <Sah bgColor="bg-white" />
       <TakBolehMakan bgColor="bg-green-50" />
       <Gerenti bgColor="bg-white" anchorText="jaminan" />

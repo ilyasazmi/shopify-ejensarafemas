@@ -15,7 +15,7 @@ const Sah = ({ bgColor }) => {
                                 Sahkan Saraf Emas Anda!
                             </h2>
                             <p className="mb-8 text-base leading-relaxed text-left text-gray-600">
-
+                                HQ Saraf Emas tidak lagi jual di <span className="font-bold">Shopee atau pun di Lazada.</span> Pastikan anda membeli dengan website yang disahkan oleh HQ Saraf Emas sahaja.
                             </p>
                             <div className="lg:mt-6 max-w-7xl sm:flex mt-0">
                                 <div className="hidden md:flex mt-3">
