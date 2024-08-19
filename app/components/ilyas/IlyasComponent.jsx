@@ -24,7 +24,7 @@ const IlyasComponent = () => {
     <>
       <Headline bgColor="bg-green-100" />
       <SectionDerita bgColor="bg-green-50" />
-      <CeritaSaya bgColor="bg-white" anchorText="ceritasaya" />
+      <CeritaSaya bgColor="bg-white" anchorText="ceritasayadf" />
       <VideoTestimoni bgColor="bg-green-50" anchorText="testimoni" />
       <Testimoni bgColor="bg-white" />
       <SectionDerita bgColor="bg-green-100" />
