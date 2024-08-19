@@ -41,12 +41,12 @@ const Faq = ({ bgColor }) => {
                     </div>
                     <div className="lg:w-3/5 xl:mt-0 w-full md:mt-12">
                         <div className="relative items-center w-full md:px-5 md:py-12">
-                            <Image
+                            {/* <Image
                                 src="https://cdn.shopify.com/s/files/1/0673/5999/8259/files/ori-ubat-750.webp?v=1692622643"
                                 alt="saraf emas yang mujarab merawat pelbagai penyakit"
                                 width={600}
                                 height={'auto'}
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
